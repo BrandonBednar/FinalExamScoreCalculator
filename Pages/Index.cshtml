@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This application can be used to find out what score you may need on your upcoming final exam. Just enter
+    the asked for information and hit enter to find out what score you will need to get that final grade that 
+    you want.</p>
+</div>
+<form id="Info-Input">
+    <div>
+        Enter your current score
+        <input name="CurrentScore" type="number" min="0" max="100" step="0.01" placeholder="00.00%" value="@Model.CurrentScore" />
+    </div>
+    <div>
+        Enter the desired score
+        <input name="DesiredScore" type="number" min="0" max="100" step="0.01" placeholder="00.00%" value="@Model.DesiredScore" />
+    </div>
+    <div>
+        Enter the weight of the final
+        <input name="FinalWeight" type="number" min="0" max="100" step="0.01" placeholder="00.00%" value="@Model.FinalWeight" />
+    </div>
+    <div>
+        <input type="submit" value="Calculate"/>
+    </div>
+    <div>
+        @Model.ResultMessage 
+    </div>
+</form>
